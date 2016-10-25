@@ -1,7 +1,13 @@
 import urllib
 
-data = urllib.urlencode({"message":"hello world"})
- 
-u = urllib.urlopen("http://localhost:8000/echo-server.php/?%s" % data)
+x = "hello"
+while x != "xxxxxx":
+    
+    data = urllib.urlencode({"message":x})
 
-print u.read()
+ 
+    u = urllib.urlopen("https://www.scss.tcd.ie:80/echo.php?%s" % data)
+    
+    print u.read()
+    x = raw_input("Enter a message to send to echo server. Enter 'xxxxxx' to exit\n")
+    
